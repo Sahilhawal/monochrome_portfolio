@@ -1,113 +1,212 @@
-import Image from "next/image";
+"use client";
+// pages/index.js
+import Head from "next/head";
+import { useState } from "react";
 
 export default function Home() {
+  const [activeSection, setActiveSection] = useState("home");
+  const [activeTab, setActiveTab] = useState("fitpage");
+  const scrollToSection = (section) => {
+    const element = document.getElementById(section);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+      setActiveSection(section);
+    }
+  };
+
+  const experienceData = {
+    fitpage: {
+      title: "Senior Application Developer | Fitpage, BKC",
+      date: "March 2022 - Present",
+      points: [
+        "Automated photo processing, reducing manual efforts from 3 days to 6 hours.",
+        "Led the refactoring of image compression, resulting in a 50% decrease in processing time.",
+        "Solely engineered and launched the initial phase of the workout builder tool.",
+        // Add more points as needed
+      ],
+    },
+    ajackus: {
+      title: "Software Engineer | Ajackus Consultancy, Andheri",
+      date: "May 2020 - March 2022",
+      points: [
+        "Contributed to the development of a reusable component library, ensuring code consistency across multiple projects.",
+        "Developed an online code editor, leading to a significant 30% reduction in customer support tickets.",
+        "Led code optimization, performed thorough code reviews, and implemented robust unit testing.",
+        // Add more points as needed
+      ],
+    },
+    sygina: {
+      title: "Software Engineer Trainee | Sygina Datasystem, CST",
+      date: "March 2019 - May 2020",
+      points: [
+        "Developed, maintained, and shipped production code for client websites using HTML, CSS, Sass, JavaScript, and jQuery.",
+        "Built frontend modules and REST APIs for clients including Times of India, Lokmat.",
+        // Add more points as needed
+      ],
+    },
+  };
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <div className="bg-black text-white font-nerdFont">
+      <Head>
+        <title>Sahil Hawal - Portfolio</title>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+
+      <nav className="fixed top-4 left-0 right-0 p-4 flex justify-end z-10">
+        <a
+          className={`mx-4 cursor-pointer ${
+            activeSection === "home" && "text-blue-500"
+          }`}
+          onClick={() => scrollToSection("home")}
+        >
+          Home
+        </a>
+        <a
+          className={`mx-4 cursor-pointer ${
+            activeSection === "experience" && "text-blue-500"
+          }`}
+          onClick={() => scrollToSection("experience")}
+        >
+          Experience
+        </a>
+        <a
+          className={`mx-4 cursor-pointer ${
+            activeSection === "skills" && "text-blue-500"
+          }`}
+          onClick={() => scrollToSection("skills")}
+        >
+          Skills
+        </a>
+        <a
+          className={`mx-4 cursor-pointer ${
+            activeSection === "projects" && "text-blue-500"
+          }`}
+          onClick={() => scrollToSection("projects")}
+        >
+          Projects
+        </a>
+        <a
+          className={`mx-4 cursor-pointer ${
+            activeSection === "contact" && "text-blue-500"
+          }`}
+          onClick={() => scrollToSection("contact")}
+        >
+          Contact
+        </a>
+      </nav>
+
+      <section className="bg-black h-screen flex items-center justify-around relative">
+        <div className="relative w-1/2 h-full">
+          <img
+            src="/sahil.png"
+            alt="Sahil Hawal"
+            className="absolute bottom-0"
+          />
         </div>
-      </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-full sm:before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full sm:after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
+        <div className="w-1/2 flex items-center justify-center">
+          <div>
+            <h1 className="text-9xl font-bold">Sahil Hawal</h1>
+            <p className="text-4xl">Software Engineer</p>
+            <p className="text-lg max-w-2xl mt-4">
+              Hi! I'm a software engineer with 4.5+ years of experience in
+              developing web applications and backend systems. I enjoy planning
+              and building things, and I'm always up for exploring new
+              technologies.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section className="mx-auto my-20 h-[500px] container flex items-center">
+        <div className="w-full">
+          {/* Vertical Tabs on Left */}
+          <h2 className="text-2xl border-b-2 border-white pb-2 mb-4">
+            Experience
           </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
+          <div className="flex my-9">
+            <div className="flex flex-col mr-8 gap-4">
+              <button
+                className={`text-lg mb-4 focus:outline-none ${
+                  activeTab === "fitpage" && "border-b-2 border-blue-500"
+                }`}
+                onClick={() => setActiveTab("fitpage")}
+              >
+                Fitpage
+              </button>
+              <button
+                className={`text-lg mb-4 focus:outline-none ${
+                  activeTab === "ajackus" && "border-b-2 border-blue-500"
+                }`}
+                onClick={() => setActiveTab("ajackus")}
+              >
+                Ajackus
+              </button>
+              <button
+                className={`text-lg focus:outline-none ${
+                  activeTab === "sygina" && "border-b-2 border-blue-500"
+                }`}
+                onClick={() => setActiveTab("sygina")}
+              >
+                Sygina
+              </button>
+            </div>
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
+            {/* Content based on active tab */}
+            <div className="mb-6">
+              <h3 className="text-xl font-semibold">
+                {experienceData[activeTab].title}
+              </h3>
+              <p className="text-gray-400">{experienceData[activeTab].date}</p>
+              <ul className="list-disc pl-6">
+                {experienceData[activeTab].points.map((point, index) => (
+                  <li key={index}>{point}</li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore starter templates for Next.js.
-          </p>
-        </a>
+      <section className="container mx-auto mb-8">
+        <h2 className="text-2xl border-b-2 border-white pb-2 mb-4">Projects</h2>
 
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50 text-balance`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
+        <div className="mb-6">
+          <h3 className="text-xl font-semibold">Kiss-vim</h3>
+          <p>
+            A simple neovim distribution to quickly set up an IDE-like
+            experience in your terminal.
           </p>
-        </a>
-      </div>
-    </main>
+          <p className="text-gray-400">
+            <a href="your_kiss_vim_project_link">Link</a>
+          </p>
+        </div>
+
+        <div>
+          <h3 className="text-xl font-semibold">Everything-zen</h3>
+          <p>A minimal, dark theme for VS Code.</p>
+          <p className="text-gray-400">
+            <a href="your_everything_zen_project_link">Link</a>
+          </p>
+        </div>
+      </section>
+
+      <section className="container mx-auto mb-8">
+        <h2 className="text-2xl border-b-2 border-white pb-2 mb-4">Projects</h2>
+        {/* Add your project details here */}
+      </section>
+
+      <section className="container mx-auto mb-8">
+        <h2 className="text-2xl border-b-2 border-white pb-2 mb-4">Contact</h2>
+        <p>Navi Mumbai, MH India</p>
+        <p>+91 7666046688</p>
+        <p>Email: sahilhawal1996@gmail.com</p>
+        <p>Github: sahilhawal</p>
+        <p>LinkedIn: sahil-hawal</p>
+      </section>
+
+      <footer className="text-center py-4 bg-gray-800">
+        <p>&copy; 2024 Sahil Hawal. All Rights Reserved.</p>
+      </footer>
+    </div>
   );
 }
