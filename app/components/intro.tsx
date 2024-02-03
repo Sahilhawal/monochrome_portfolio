@@ -24,7 +24,7 @@ export default function Intro() {
 
       <div className="relative w-full h-[300px] md:h-[500px] md:self-end">
         <div className="absolute top-2 left-1/4 md:left-1/2 md:top-10">
-          <div className="bg-white p-4 rounded-lg shadow-md">
+          <div className="bg-white p-4 rounded-lg">
             <p className="text-gray-800">{"btw, I use vim"}</p>
           </div>
           <div className="w-0 h-0 border-t-8 border-transparent border-solid border-white"></div>

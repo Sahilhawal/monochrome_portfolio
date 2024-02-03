@@ -68,7 +68,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <nav className="fixed top-4 left-0 right-0 p-4 flex justify-end z-10">
+      <nav className="fixed top-0 left-0 right-0 p-4 flex justify-end z-10 bg-black">
         <a
           className={`mx-4 cursor-pointer ${
             activeSection === "home" && "text-blue-500"
@@ -112,7 +112,7 @@ export default function Home() {
       </nav>
       <main className="max-w-[360px] lg:max-w-[900px] 2xl:max-w-[1200px] mx-auto">
         <Intro />
-        <section className="mx-auto my-20 flex flex-col justify-center">
+        <section className="mx-auto my-40 flex flex-col justify-center">
           {/* Vertical Tabs on Left */}
           <h2 className="text-2xl border-b-2 border-white pb-2 mb-4">
             Experience
@@ -161,12 +161,12 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <section className="mx-auto my-20 flex flex-col justify-center  lg:max-w-[900px] 2xl:max-w-[1200px]">
+        <section className="mx-auto my-40 flex flex-col justify-center  lg:max-w-[900px] 2xl:max-w-[1200px]">
           <h2 className="text-2xl border-b-2 border-white pb-2 mb-4">Skills</h2>
 
           {/* Skill categories */}
           <div className="mb-6 flex">
-            {["languages", "frameworks", "databases", "tools"].map(
+            {["languages", "frameworks/Libraries", "databases", "tools"].map(
               (category) => (
                 <button
                   key={category}
@@ -193,11 +193,13 @@ export default function Home() {
               </ul>
             )}
 
-            {activeSkillSection === "frameworks" && (
+            {activeSkillSection === "frameworks/Libraries" && (
               <ul className="list-disc pl-6">
                 <li>React</li>
-                <li>Next.js, Redux</li>
-                <li>Nest.js, Tailwind</li>
+                <li>Next.js</li>
+                <li>Redux</li>
+                <li>Tailwind</li>
+                <li>Nest.js</li>
                 <li>Ruby on Rails</li>
               </ul>
             )}
@@ -214,7 +216,9 @@ export default function Home() {
                 <li>Kafka</li>
                 <li>Bull Queue</li>
                 <li>Docker</li>
-                <li>Vim, Tmux, Git</li>
+                <li>Git</li>
+                <li>Vim</li>
+                <li>tmux</li>
               </ul>
             )}
           </div>
@@ -260,13 +264,15 @@ export default function Home() {
           </div>
         </section> */}
 
-        <section className="mx-auto my-20 flex flex-col">
+        <section className="mx-auto my-40 flex flex-col">
           <h2 className="text-2xl border-b-2 border-white pb-2 mb-4">
             Projects
           </h2>
 
           <div className="mb-6">
-            <h3 className="text-xl font-semibold">Kiss-vim</h3>
+            <h3 className="text-xl font-semibold mb-1">
+              <span className="border-b-2 border-blue-500">Kiss-vim</span>
+            </h3>
             <p>
               A simple neovim distribution to quickly set up an IDE-like
               experience in your terminal.
@@ -277,7 +283,9 @@ export default function Home() {
           </div>
 
           <div>
-            <h3 className="text-xl font-semibold">Everything-zen</h3>
+            <h3 className="text-xl font-semibold mb-1">
+              <span className="border-b-2 border-blue-500">Everything-zen</span>
+            </h3>
             <p>A minimal, dark theme for VS Code.</p>
             <p className="text-gray-400">
               <a href="your_everything_zen_project_link">Link</a>
@@ -285,12 +293,12 @@ export default function Home() {
           </div>
         </section>
       </main>
-      <div className="fixed left-8 bottom-44">
-        <div className="flex flex-col space-y-4">
+      <div className="fixed left-8 bottom-0">
+        <div className="flex flex-col gap-3 space-y-4 justify-center items-center">
           {/* Email */}
           <div className="flex items-center">
             <a href="mailto:sahilhawal1996@gmail.com">
-              <FaEnvelope className="mr-2 text-white" />
+              <FaEnvelope className=" h-5 w-5 text-white" />
               {/* <p>sahilhawal1996@gmail.com</p> */}
             </a>
           </div>
@@ -301,7 +309,7 @@ export default function Home() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <FaGithub className="mr-2 text-white" />
+              <FaGithub className=" h-5 w-5 text-white" />
               {/* <p>sahilhawal</p> */}
             </a>
           </div>
@@ -312,14 +320,17 @@ export default function Home() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <FaLinkedin className="mr-2 text-white" />
+              <FaLinkedin className=" h-5 w-5 text-white" />
               {/* <p>sahil-hawal</p> */}
             </a>
+          </div>
+          <div className="flex items-center">
+            <div className="w-0.5 h-[140px] bg-white"></div>
           </div>
         </div>
       </div>
 
-      <footer className="text-center py-4 bg-white text-black">
+      <footer className="text-center py-4 text-white">
         <p>&copy; 2024 Sahil Hawal. All Rights Reserved.</p>
       </footer>
     </div>
