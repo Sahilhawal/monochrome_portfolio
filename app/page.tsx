@@ -278,7 +278,7 @@ export default function Home() {
               experience in your terminal.
             </p>
             <p className="text-gray-400">
-              <a href="your_kiss_vim_project_link">Link</a>
+              <a href="https://github.com/Sahilhawal/kiss-vim">Link</a>
             </p>
           </div>
 
@@ -288,7 +288,9 @@ export default function Home() {
             </h3>
             <p>A minimal, dark theme for VS Code.</p>
             <p className="text-gray-400">
-              <a href="your_everything_zen_project_link">Link</a>
+              <a href="https://marketplace.visualstudio.com/items?itemName=sahilhawal.everything-zen">
+                Link
+              </a>
             </p>
           </div>
         </section>
