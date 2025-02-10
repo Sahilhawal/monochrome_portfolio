@@ -24,8 +24,17 @@ export default function Home() {
     string,
     { title: string; date: string; points: string[] }
   > = {
+    ingramMicro: {
+      title: "Software Engineer | Mumbai",
+      date: "May 2024 - Present",
+      points: [
+        "Optimized home page load time from 8s to 2s.",
+        "Increased code coverage to 80% for React repositories and, mentored team members in writing unit test cases.",
+        "Refactored common code into reusable React hooks, reducing duplication across micro frontend repos.",
+      ],
+    },
     fitpage: {
-      title: "Senior Application Developer | Fitpage, BKC",
+      title: "Senior Application Developer | BKC",
       date: "March 2022 - Present",
       points: [
         "Automated photo processing, reducing manual efforts from 3 days to 6 hours.",
@@ -35,7 +44,7 @@ export default function Home() {
       ],
     },
     ajackus: {
-      title: "Software Engineer | Ajackus Consultancy, Andheri",
+      title: "Software Engineer | Andheri",
       date: "May 2020 - March 2022",
       points: [
         "Contributed to the development of a reusable component library, ensuring code consistency across multiple projects.",
@@ -45,7 +54,7 @@ export default function Home() {
       ],
     },
     sygina: {
-      title: "Software Engineer Trainee | Sygina Datasystem, CST",
+      title: "Software Engineer Trainee | CST",
       date: "March 2019 - May 2020",
       points: [
         "Developed, maintained, and shipped production code for client websites using HTML, CSS, Sass, JavaScript, and jQuery.",
@@ -112,6 +121,14 @@ export default function Home() {
           </h2>
           <div className="flex my-9 h-[400px]">
             <div className="flex flex-col mr-8 gap-4">
+              <button
+                className={`text-lg mb-4 focus:outline-none ${
+                  activeTab === "ingramMicro" && "border-b-2 border-blue-500"
+                }`}
+                onClick={() => setActiveTab("ingramMicro")}
+              >
+                Ingram Micro
+              </button>
               <button
                 className={`text-lg mb-4 focus:outline-none ${
                   activeTab === "fitpage" && "border-b-2 border-blue-500"
