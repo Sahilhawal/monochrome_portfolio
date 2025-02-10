@@ -3,13 +3,7 @@
 import Head from "next/head";
 import { useState } from "react";
 import Intro from "./components/intro";
-import {
-  FaMapMarkerAlt,
-  FaPhone,
-  FaEnvelope,
-  FaGithub,
-  FaLinkedin,
-} from "react-icons/fa";
+import { FaEnvelope, FaGithub, FaLinkedin } from "react-icons/fa";
 export default function Home() {
   const [activeSection, setActiveSection] = useState("home");
   const [activeTab, setActiveTab] = useState("fitpage");

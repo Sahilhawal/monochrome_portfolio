@@ -5,7 +5,14 @@ import Image from "next/image";
 import { useState } from "react";
 
 export default function Intro() {
-  const [activeTab, setActiveTab] = useState("fitpage");
+  const calculateYOE = () => {
+    const careerStartDate = new Date("1-03-2019");
+    const todaysDate = new Date();
+    const yearsDiff = todaysDate.getFullYear() - careerStartDate.getFullYear();
+    const monthsDiff = todaysDate.getMonth() - careerStartDate.getMonth();
+
+    return Math.floor((yearsDiff * 12 + monthsDiff) / 12);
+  };
 
   return (
     <section className="bg-black h-screen flex flex-col md:flex-row-reverse justify-between ">
@@ -14,10 +21,10 @@ export default function Intro() {
           <h1 className="text-5xl mb:text-9xl font-bold">Sahil Hawal</h1>
           <p className="text-xl mb:text-4xl text-blue-500">Software Engineer</p>
           <p className="text-lg max-w-2xl mt-4">
-            Hi! I am a software engineer with 4.5+ years of experience in
-            developing web applications and backend systems. I enjoy planning
-            and building things, and I am always up for exploring new
-            technologies.
+            Hi! I am a software engineer with {calculateYOE()}+ years of
+            experience in developing web applications and backend systems. I
+            enjoy planning and building things, and I am always up for exploring
+            new technologies.
           </p>
         </div>
       </div>
