@@ -9,9 +9,19 @@ export default function Home() {
   const [activeTab, setActiveTab] = useState("fitpage");
   const [activeSkillSection, setActiveSkillSection] = useState("languages");
   const scrollToSection = (section: any) => {
+    console.log({ section });
     const element = document.getElementById(section);
+    console.log({ element });
     if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+      var headerOffset = 60;
+      var elementPosition = element.getBoundingClientRect().top;
+      var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth",
+      });
+      // element.scrollIntoView({ behavior: "smooth", top: 20 });
       setActiveSection(section);
     }
   };
@@ -115,7 +125,10 @@ export default function Home() {
       </nav>
       <main className="max-w-[360px] lg:max-w-[900px] 2xl:max-w-[1200px] mx-auto">
         <Intro />
-        <section className="mx-auto my-40 flex flex-col justify-center">
+        <section
+          id="experience"
+          className="mx-auto my-40 flex flex-col justify-center"
+        >
           <h2 className="text-2xl border-b-2 border-white pb-2 mb-4">
             Experience
           </h2>
@@ -170,7 +183,10 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <section className="w-auto mx-auto my-40 flex flex-col justify-center  lg:max-w-[900px] 2xl:max-w-[1200px]">
+        <section
+          id="skills"
+          className="w-auto mx-auto my-40 flex flex-col justify-center  lg:max-w-[900px] 2xl:max-w-[1200px]"
+        >
           <h2 className="text-2xl border-b-2 border-white pb-2 mb-4">Skills</h2>
           <div className="flex gap-4">
             <div className="mb-6 flex flex-col items-start gap-4">
@@ -231,7 +247,7 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <section className="mx-auto my-40 flex flex-col">
+        <section id="projects" className="mx-auto my-40 flex flex-col">
           <h2 className="text-2xl border-b-2 border-white pb-2 mb-4">
             Projects
           </h2>
@@ -262,7 +278,7 @@ export default function Home() {
           </div>
         </section>
       </main>
-      <div className="sm:fixed left-8 bottom-0">
+      <div id="contact" className="sm:fixed left-8 bottom-0">
         <div className="flex justify-center items-end sm:flex-col gap-3 space-y-4 sm:justify-center sm:items-center">
           <div className="flex items-center">
             <a href="mailto:sahilhawal1996@gmail.com">
