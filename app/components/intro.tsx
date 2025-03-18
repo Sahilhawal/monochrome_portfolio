@@ -1,8 +1,5 @@
 "use client";
-// pages/index.js
-import Head from "next/head";
 import Image from "next/image";
-import { useState } from "react";
 
 export default function Intro() {
   const calculateYOE = () => {

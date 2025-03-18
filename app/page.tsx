@@ -120,7 +120,7 @@ export default function Home() {
             Experience
           </h2>
           <div className="flex my-9 h-[400px]">
-            <div className="flex flex-col mr-8 gap-4">
+            <div className="flex flex-col mr-8 gap-4 items-start">
               <button
                 className={`text-lg mb-4 focus:outline-none ${
                   activeTab === "ingramMicro" && "border-b-2 border-blue-500"
@@ -164,7 +164,7 @@ export default function Home() {
                 {experienceData[activeTab].points.map(
                   (point: any, index: any) => (
                     <li key={index}>{point}</li>
-                  )
+                  ),
                 )}
               </ul>
             </div>
@@ -173,7 +173,7 @@ export default function Home() {
         <section className="w-auto mx-auto my-40 flex flex-col justify-center  lg:max-w-[900px] 2xl:max-w-[1200px]">
           <h2 className="text-2xl border-b-2 border-white pb-2 mb-4">Skills</h2>
           <div className="flex gap-4">
-            <div className="mb-6 flex flex-col items-start">
+            <div className="mb-6 flex flex-col items-start gap-4">
               {["languages", "frameworks", "databases", "tools"].map(
                 (category) => (
                   <button
@@ -186,7 +186,7 @@ export default function Home() {
                   >
                     {category.charAt(0).toUpperCase() + category.slice(1)}
                   </button>
-                )
+                ),
               )}
             </div>
 
