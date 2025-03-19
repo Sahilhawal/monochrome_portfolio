@@ -12,7 +12,10 @@ export default function Intro() {
   };
 
   return (
-    <section className="bg-black h-screen flex flex-col md:flex-row-reverse justify-between ">
+    <section
+      id="home"
+      className="bg-black h-screen flex flex-col md:flex-row-reverse justify-between "
+    >
       <div className="w-full h-1/2 flex items-center justify-center m-auto">
         <div>
           <h1 className="text-5xl mb:text-9xl font-bold">Sahil Hawal</h1>

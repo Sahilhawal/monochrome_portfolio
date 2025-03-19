@@ -15,7 +15,7 @@ export default function Home() {
     if (element) {
       var headerOffset = 60;
       var elementPosition = element.getBoundingClientRect().top;
-      var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+      var offsetPosition = elementPosition - headerOffset;
 
       window.scrollTo({
         top: offsetPosition,
@@ -38,9 +38,10 @@ export default function Home() {
       title: "Software Engineer | Mumbai",
       date: "May 2024 - Present",
       points: [
-        "Optimized home page load time from 8s to 2s.",
+        "Optimized home page load time from by 70%",
         "Increased code coverage to 80% for React repositories and, mentored team members in writing unit test cases.",
         "Refactored common code into reusable React hooks, reducing duplication across micro frontend repos.",
+        "Worked on migration of react 16 to 18 of the microfrontend repositories",
       ],
     },
     fitpage: {
