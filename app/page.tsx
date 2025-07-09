@@ -126,6 +126,24 @@ export default function Home() {
       </nav>
       <main className="max-w-[360px] lg:max-w-[900px] 2xl:max-w-[1200px] mx-auto">
         <Intro />
+        <section className="mx-auto my-40 flex flex-col justify-center">
+          <h2 className="text-2xl border-b-2 border-white pb-2 mb-4">
+            What I’m Looking For
+          </h2>
+          <p className="mb-4">
+            I thrive in small, product-focused teams where creativity and
+            autonomy are valued. Whether remote or hybrid, I bring my best self
+            to work when solving real problems, owning features end-to-end, and
+            collaborating closely with cross-functional teams. I’m currently
+            looking for roles where I can:
+          </p>
+          <ul className="list-disc pl-6 space-y-2">
+            <li>Work on challenging and meaningful products</li>
+            <li>Collaborate in a small and motivated team</li>
+            <li>Maintain a healthy work-life balance</li>
+            <li>Contribute to system design and architecture</li>
+          </ul>
+        </section>
         <section
           id="experience"
           className="mx-auto my-40 flex flex-col justify-center"
@@ -178,7 +196,7 @@ export default function Home() {
                 {experienceData[activeTab].points.map(
                   (point: any, index: any) => (
                     <li key={index}>{point}</li>
-                  ),
+                  )
                 )}
               </ul>
             </div>
@@ -203,7 +221,7 @@ export default function Home() {
                   >
                     {category.charAt(0).toUpperCase() + category.slice(1)}
                   </button>
-                ),
+                )
               )}
             </div>
 
@@ -252,6 +270,22 @@ export default function Home() {
           <h2 className="text-2xl border-b-2 border-white pb-2 mb-4">
             Projects
           </h2>
+
+          <div className="mb-6">
+            <h3 className="text-xl font-semibold mb-1">
+              <span className="border-b-2 border-blue-500">MoneyLens</span>
+            </h3>
+            <p>
+              a privacy-focused, no-login expense tracker that lets users
+              instantly analyze their bank transactions by uploading Excel
+              statements. Designed for simplicity and speed, it works entirely
+              in the browser—no sign-ups, no data storage, just instant
+              insights.
+            </p>
+            <p className="text-gray-400">
+              <a href="https://moneylens.vercel.app">Link</a>
+            </p>
+          </div>
 
           <div className="mb-6">
             <h3 className="text-xl font-semibold mb-1">
