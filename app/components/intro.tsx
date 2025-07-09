@@ -19,7 +19,9 @@ export default function Intro() {
       <div className="w-full h-1/2 flex items-center justify-center m-auto">
         <div>
           <h1 className="text-5xl mb:text-9xl font-bold">Sahil Hawal</h1>
-          <p className="text-xl mb:text-4xl text-blue-500">Software Engineer</p>
+          <p className="text-xl mb:text-4xl text-[#dcff02]">
+            Software Engineer
+          </p>
           <p className="text-lg max-w-2xl mt-4">
             Hi! I am a software engineer with {calculateYOE()}+ years of
             experience in developing web applications and backend systems. I

@@ -85,7 +85,7 @@ export default function Home() {
       <nav className="hidden sm:flex fixed top-0 left-0 right-0 p-4 justify-end z-10 bg-black">
         <a
           className={`mx-4 cursor-pointer ${
-            activeSection === "home" && "text-blue-500"
+            activeSection === "home" && "text-[#dcff02]"
           }`}
           onClick={() => scrollToSection("home")}
         >
@@ -93,7 +93,7 @@ export default function Home() {
         </a>
         <a
           className={`mx-4 cursor-pointer ${
-            activeSection === "experience" && "text-blue-500"
+            activeSection === "experience" && "text-[#dcff02]"
           }`}
           onClick={() => scrollToSection("experience")}
         >
@@ -101,7 +101,7 @@ export default function Home() {
         </a>
         <a
           className={`mx-4 cursor-pointer ${
-            activeSection === "skills" && "text-blue-500"
+            activeSection === "skills" && "text-[#dcff02]"
           }`}
           onClick={() => scrollToSection("skills")}
         >
@@ -109,7 +109,7 @@ export default function Home() {
         </a>
         <a
           className={`mx-4 cursor-pointer ${
-            activeSection === "projects" && "text-blue-500"
+            activeSection === "projects" && "text-[#dcff02]"
           }`}
           onClick={() => scrollToSection("projects")}
         >
@@ -117,7 +117,7 @@ export default function Home() {
         </a>
         <a
           className={`mx-4 cursor-pointer ${
-            activeSection === "contact" && "text-blue-500"
+            activeSection === "contact" && "text-[#dcff02]"
           }`}
           onClick={() => scrollToSection("contact")}
         >
@@ -155,7 +155,7 @@ export default function Home() {
             <div className="flex flex-col mr-8 gap-4 items-start">
               <button
                 className={`text-lg mb-4 focus:outline-none ${
-                  activeTab === "ingramMicro" && "border-b-2 border-blue-500"
+                  activeTab === "ingramMicro" && "border-b-2 border-[#dcff02]"
                 }`}
                 onClick={() => setActiveTab("ingramMicro")}
               >
@@ -163,7 +163,7 @@ export default function Home() {
               </button>
               <button
                 className={`text-lg mb-4 focus:outline-none ${
-                  activeTab === "fitpage" && "border-b-2 border-blue-500"
+                  activeTab === "fitpage" && "border-b-2 border-[#dcff02]"
                 }`}
                 onClick={() => setActiveTab("fitpage")}
               >
@@ -171,7 +171,7 @@ export default function Home() {
               </button>
               <button
                 className={`text-lg mb-4 focus:outline-none ${
-                  activeTab === "ajackus" && "border-b-2 border-blue-500"
+                  activeTab === "ajackus" && "border-b-2 border-[#dcff02]"
                 }`}
                 onClick={() => setActiveTab("ajackus")}
               >
@@ -179,7 +179,7 @@ export default function Home() {
               </button>
               <button
                 className={`text-lg focus:outline-none ${
-                  activeTab === "sygina" && "border-b-2 border-blue-500"
+                  activeTab === "sygina" && "border-b-2 border-[#dcff02]"
                 }`}
                 onClick={() => setActiveTab("sygina")}
               >
@@ -215,7 +215,7 @@ export default function Home() {
                     key={category}
                     className={`text-lg sm:mx-4 focus:outline-none ${
                       activeSkillSection === category &&
-                      "border-b-2 border-blue-500"
+                      "border-b-2 border-[#dcff02]"
                     }`}
                     onClick={() => scrollToSkillSection(category)}
                   >
@@ -273,7 +273,7 @@ export default function Home() {
 
           <div className="mb-6">
             <h3 className="text-xl font-semibold mb-1">
-              <span className="border-b-2 border-blue-500">MoneyLens</span>
+              <span className="border-b-2 border-[#dcff02]">MoneyLens</span>
             </h3>
             <p>
               a privacy-focused, no-login expense tracker that lets users
@@ -289,7 +289,7 @@ export default function Home() {
 
           <div className="mb-6">
             <h3 className="text-xl font-semibold mb-1">
-              <span className="border-b-2 border-blue-500">Kiss-vim</span>
+              <span className="border-b-2 border-[#dcff02]">Kiss-vim</span>
             </h3>
             <p>
               A simple neovim distribution to quickly set up an IDE-like
@@ -304,7 +304,9 @@ export default function Home() {
 
           <div>
             <h3 className="text-xl font-semibold mb-1">
-              <span className="border-b-2 border-blue-500">Everything-zen</span>
+              <span className="border-b-2 border-[#dcff02]">
+                Everything-zen
+              </span>
             </h3>
             <p>A minimal, dark theme for VS Code.</p>
             <p className="text-gray-400">
