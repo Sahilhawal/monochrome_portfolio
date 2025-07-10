@@ -128,20 +128,21 @@ export default function Home() {
         <Intro />
         <section className="mx-auto my-40 flex flex-col justify-center">
           <h2 className="text-2xl border-b-2 border-white pb-2 mb-4">
-            What I’m Looking For
+            How I Work Best
           </h2>
           <p className="mb-4">
-            I thrive in small, product-focused teams where creativity and
-            autonomy are valued. Whether remote or hybrid, I bring my best self
-            to work when solving real problems, owning features end-to-end, and
-            collaborating closely with cross-functional teams. I’m currently
-            looking for roles where I can:
+            Over the years, I’ve realized I do my best work in small,
+            product-focused teams where creativity, ownership, and impact
+            matter. I enjoy solving meaningful problems, thinking beyond the
+            code, and contributing to thoughtful product decisions.
           </p>
           <ul className="list-disc pl-6 space-y-2">
-            <li>Work on challenging and meaningful products</li>
-            <li>Collaborate in a small and motivated team</li>
-            <li>Maintain a healthy work-life balance</li>
-            <li>Contribute to system design and architecture</li>
+            <li>Building user-focused, impactful features end-to-end</li>
+            <li>Working with autonomous, motivated teammates</li>
+            <li>Balancing high performance with sustainable pace</li>
+            <li>
+              Contributing to system design, architecture, and product thinking
+            </li>
           </ul>
         </section>
         <section
