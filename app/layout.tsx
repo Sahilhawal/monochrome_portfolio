@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 import localFont from "next/font/local";
 
@@ -25,7 +25,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={nerdFont.variable}>{children}</body>
+      <body className={nerdFont.variable}>
+        {children}
+        <Analytics />
+      </body>
     </html>
   );
 }
